@@ -1,0 +1,11 @@
+quarkus:
+  log:
+    min-level: DEBUG
+    console:
+      enable: true
+      format: "[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%c{2.}] %c{1} - %m%n"
+      level: DEBUG
+
+  # Swagger-UI
+  swagger-ui:
+    always-include: true
