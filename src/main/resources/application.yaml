@@ -9,3 +9,11 @@ quarkus:
   # Swagger-UI
   swagger-ui:
     always-include: true
+
+influxdb:
+  connectionUrl: https://us-central1-1.gcp.cloud2.influxdata.com/
+  token: token
+  orgId: orgId
+  data:
+    bucketId: bucketId
+    bucketName: ParticleDevice

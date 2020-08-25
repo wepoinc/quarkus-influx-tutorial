@@ -1,17 +1,23 @@
-package org.example.controller.data.dto;
+package org.example.model.measurement;
 
-import org.example.model.measurement.Data;
+import com.influxdb.annotations.Column;
+import com.influxdb.annotations.Measurement;
 
-public class DataOutDTO {
+import java.time.Instant;
 
+@Measurement(name = "data")
+public class Data {
+
+    @Column(tag = true)
     private String location;
-    private Double value;
-    private Long time;
 
-    public DataOutDTO(Data data) {
-        this.location = data.getLocation();
-        this.value = data.getValue();
-        this.time = data.getTime().toEpochMilli();
+    @Column
+    private Double value;
+
+    @Column(timestamp = true)
+    private Instant time;
+
+    public Data() {
     }
 
     public String getLocation() {
@@ -30,11 +36,11 @@ public class DataOutDTO {
         this.value = value;
     }
 
-    public Long getTime() {
+    public Instant getTime() {
         return time;
     }
 
-    public void setTime(Long time) {
+    public void setTime(Instant time) {
         this.time = time;
     }
 }
