@@ -1,30 +1,16 @@
-# tutorial project
+# Getting started with Quarkus and InfluxDB to ingest sensor data from a Particle device
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This repository contains the code used in the "Getting started with Quarkus and InfluxDB to ingest sensor data from a Particle device" tutorial. The tutorial is divided in two parts:
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+- [Getting started with Quarkus and InfluxDB to ingest sensor data from a Particle device - Part 1](https://medium.com/wepoinc/getting-started-with-quarkus-and-influxdb-to-ingest-sensor-data-from-a-particle-device-part-1-6816c66ee94?source=friends_link&sk=b04986f369dd34ed83e6128bcfe6e0a8)
+- [Getting started with Quarkus and InfluxDB to ingest sensor data from a Particle device - Part 2](https://medium.com/wepoinc/getting-started-with-quarkus-and-influxdb-to-ingest-sensor-data-from-a-particle-device-part-2-d39f8e2a7777?source=friends_link&sk=d417053dcf1f7e24ee921f7601dd39f9)
 
-## Running the application in dev mode
+The code for Part 1 of the tutorial can be found in the branch `part-1`.
 
-You can run your application in dev mode that enables live coding using:
-```
-./mvnw quarkus:dev
-```
 
-## Packaging and running the application
+## Building and running the application
 
-The application can be packaged using `./mvnw package`.
+The application can be built using `./mvnw clean package -DskipTests=true`.
 It produces the `tutorial-1.0.0-SNAPSHOT-runner.jar` file in the `/target` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/lib` directory.
 
-The application is now runnable using `java -jar target/tutorial-1.0.0-SNAPSHOT-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: `./mvnw package -Pnative`.
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: `./mvnw package -Pnative -Dquarkus.native.container-build=true`.
-
-You can then execute your native executable with: `./target/tutorial-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
+The application is now runnable using `java -Dfile.encoding=UTF-8 -jar target/tutorial-1.0.0-SNAPSHOT-runner.jar`.
